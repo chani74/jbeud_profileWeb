@@ -8,6 +8,7 @@
 <title>Profile of Eunchan</title>
 </head>
 <body>
+	<%@ include file="include/header.jsp" %>
 	<center>
 	<table border=0 cellpadding=20 cellspacing=0>
 	<tr>
@@ -34,5 +35,6 @@
 	
 	</table>
 	</center>
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>
