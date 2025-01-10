@@ -20,7 +20,7 @@ span.title_text01 {
 	font-family: Arial;
 	font-weight: bold;
 }
-span.title_text01 {
+span.title_text02 {
 	font-size: 30px;
 	color : #0f4c75;
 	font-family: Arial;
@@ -28,7 +28,7 @@ span.title_text01 {
 }
 
 span.skill_text01 {
-	font-size: 60px;
+	font-size: 50px;
 	color : #bbe1fa;
 	font-family: Arial;
 	font-weight: bold;
@@ -39,4 +39,12 @@ span.skill_text02 {
 	color : #3282b8;
 	font-family: Arial;
 	font-weight: bold;
+}
+
+td.skill_box {
+	background-color: #1b262c;
+}
+
+td.image_box {
+	background-color: #bbe1fa;
 }
