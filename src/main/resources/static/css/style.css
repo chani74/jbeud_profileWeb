@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*
+https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa
+
+#1B262C
+#0F4C75
+#3282B8
+#BBE1FA
+*/
+
+body {
+	margin:0;
+	padding:0;
+}
+
+span.title_text01 {
+	font-size: 70px;
+	color : #1B262C;
+	font-family: Arial;
+	font-weight: bold;
+}
+span.title_text01 {
+	font-size: 30px;
+	color : #0f4c75;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+span.skill_text01 {
+	font-size: 60px;
+	color : #bbe1fa;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+span.skill_text02 {
+	font-size: 30px;
+	color : #3282b8;
+	font-family: Arial;
+	font-weight: bold;
+}
