@@ -17,4 +17,9 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping(value="/join")
+	public String join() {
+		return "join";
+	}
+	
 }

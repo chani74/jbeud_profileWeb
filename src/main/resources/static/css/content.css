@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/*
+https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa
+
+#1B262C
+#0F4C75
+#3282B8
+#BBE1FA
+*/
+
+body {
+	margin:0;
+	padding:0;
+}
+
+
+td.content_box {
+	background-color: #bbe1fa;
+	width : 980px;
+	height : 489px;
+}
+
+span.content_text {
+	color : #1B262C;
+	font-size : 20px;
+	font-family: 나눔고딕;
+	font-weight: bold;
+	
+	
+}
+
+input.input_box {
+	border:1px solid #1B262C;
+	width : 250px;
+	font-size : 20px;
+	font-family: Arial;
+	padding: 5px;
+}
+
+input.content_btn {
+	border:2px solid #1B262C;
+	width : 150px;
+	
+	background-color: #3282B8;
+	color : #BBE1FA;
+	font-size : 15px;
+	padding: 5px;
+}

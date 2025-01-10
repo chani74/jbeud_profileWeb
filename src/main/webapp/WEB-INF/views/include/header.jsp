@@ -15,7 +15,7 @@
 		<td width=2%>&nbsp;</td>
 		<td width=5% ><a href="#" class="header_link"><span class="header_menu">LOGIN</span></a></td>
 		<td width=2%>&nbsp;</td>
-		<td width=5% ><a href="#" class="header_link"><span class="header_menu">JOIN</span></a></td>
+		<td width=5% ><a href="join" class="header_link"><span class="header_menu">JOIN</span></a></td>
 		<td width=2%>&nbsp;</td>
 		<td width=5% ><a href="#" class="header_link"><span class="header_menu">PROFILE</span></a></td>
 		<td width=2%>&nbsp;</td>
