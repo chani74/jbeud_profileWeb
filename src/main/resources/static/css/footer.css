@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/*
+https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa
+
+#1B262C
+#0F4C75
+#3282B8
+#BBE1FA
+*/
+
+tr.footer_line {
+	background-color: #1B262C;
+}
+
+span.footer_text {
+	color : #BBE1FA;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+a.header_link:link {
+	text-decoration: none;
+	color:inherit;
+}
+
+a.header_link:hover {
+	text-decoration-line: underline;
+	text-decoration-color :  #BBE1FA;
+	color:inherit;
+}
