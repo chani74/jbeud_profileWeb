@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/*
+https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa
+
+#1B262C
+#0F4C75
+#3282B8
+#BBE1FA
+*/
+
+th.board_title_td {
+	font-family: NanumGothic,Arial;
+	font-size : 16px;
+	color : #BBE1FA;
+}
+
+th.board_content_td {
+	font-family: NanumGothic,Arial;
+	font-size : 16px;
+	color : #0F4C75;
+}
+
+tr.board_title_tr {
+	background-color: #1B262C;
+}
+
+tr.board_content_tr {
+	background-color: #BBE1FA;
+}
+

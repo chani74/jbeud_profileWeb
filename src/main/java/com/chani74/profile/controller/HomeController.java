@@ -21,5 +21,20 @@ public class HomeController {
 	public String join() {
 		return "join";
 	}
-	
+	@GetMapping(value="/login")
+	public String login() {
+		return "login";
+	}
+	@GetMapping(value="/contact")
+	public String contact() {
+		return "contact";
+	}
+	@GetMapping(value="/profile")
+	public String profiile() {
+		return "profile";
+	}
+	@GetMapping(value="/board")
+	public String board() {
+		return "board";
+	}
 }

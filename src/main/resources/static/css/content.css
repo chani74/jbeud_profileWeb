@@ -47,3 +47,14 @@ input.content_btn {
 	font-size : 15px;
 	padding: 5px;
 }
+
+input.content_btn:hover {
+	border:2px solid #1B262C;
+	width : 150px;
+	
+	background-color: #0F4C75;
+	color : #BBE1FA;
+	font-size : 15px;
+	padding: 5px;
+	cursor:pointer;
+}
