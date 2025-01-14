@@ -44,7 +44,7 @@
 							<td align=center class="board_content_td">${bDto.bid }</td>
 							<td align=center class="board_content_td">${bDto.bname }</td>
 							<td align=center class="board_content_td">
-								<a href="content" class="board_title">
+								<a href="viewContent?bnum=${bDto.bnum }" class="board_link">
 								<c:choose>
 									<c:when test="${fn:length(bDto.btitle)>25 }">${fn:substring(bDto.btitle,0,25) }...</c:when>
 									<c:otherwise>${bDto.btitle }</c:otherwise>

@@ -74,4 +74,49 @@ public class BoardController {
 		return "board";
 	}
 	
+	@GetMapping("/viewContent")
+	public String viewContent(HttpServletRequest request, Model model) {
+		
+		int bnum = Integer.parseInt(request.getParameter("bnum"));
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bdto = bDao.viewContentDao(bnum);
+		
+		model.addAttribute("bdto", bdto);
+		
+		return "viewContent";
+	}
+	@GetMapping("/modifyContent")
+	public String modifyContent(HttpServletRequest request, Model model, HttpSession session) {
+		
+		int bnum = Integer.parseInt(request.getParameter("bnum"));
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bdto = bDao.viewContentDao(bnum);
+		
+		String sid= (String) session.getAttribute("sessionId");
+		if(sid.equals(bdto.getBid())) {
+			model.addAttribute("bdto", bdto);
+			return "modifyContent";
+		} else {
+			model.addAttribute("msg", "글작성자만 수정할 수 있습니다.");
+			return "alert/alert2";
+		}
+
+		
+	}
+	
+	@PostMapping("/modifyContentOk")
+	public String modifyOk(HttpServletRequest request, Model model) {
+		int bnum = Integer.parseInt(request.getParameter("bnum"));
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		bDao.modifyContentDao(bnum, btitle, bcontent);
+				
+		return "redirect:list";
+	}
+	
+		
 }

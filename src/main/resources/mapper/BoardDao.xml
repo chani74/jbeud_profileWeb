@@ -12,5 +12,13 @@
 	    <select id="listDao" resultType="com.chani74.profile.dto.BoardDto">
 	    	SELECT * FROM profileboard ORDER BY bnum DESC 
 	    </select>
+	    
+	    <select id="viewContentDao" resultType="com.chani74.profile.dto.BoardDto">
+	    	SELECT * FROM profileboard WHERE bnum = #{param1}
+	    </select>
+	    
+	    <update id="modifyContentDao">
+	    	UPDATE profileboard set btitle=#{param2} , bcontent=#{param3} where bnum=#{param1}
+	    </update>
     </mapper>
     

@@ -21,12 +21,19 @@ td.board_content_td {
 	color : #0F4C75;
 }
 
-a.board_title:link{
+a.board_link:link{
 	text-decoration: none;
 	color:inherit;
 }
 
-
+a.board_link:hover{
+	text-decoration: underline;
+	color:inherit;
+}
+a.board_link:visited{
+	text-decoration: none;
+	color:inherit;
+}
 
 tr.board_title_tr {
 	background-color: #1B262C;
