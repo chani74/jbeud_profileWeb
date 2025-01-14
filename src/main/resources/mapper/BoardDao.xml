@@ -4,5 +4,13 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
     <mapper namespace="com.chani74.profile.dao.BoardDao">
+	    <insert id="writeDao">
+	    	Insert INTO profileBoard (bnum, bid, bname, btitle, bcontent, bhit) 
+	    	values (BOARD_SEQUENCE.nextval, #{param1}, #{param2}, #{param3}, #{param4},0 )
+	    </insert>
+	    
+	    <select id="listDao" resultType="com.chani74.profile.dto.BoardDto">
+	    	SELECT * FROM profileboard ORDER BY bnum DESC 
+	    </select>
     </mapper>
     

@@ -33,8 +33,5 @@ public class HomeController {
 	public String profiile() {
 		return "profile";
 	}
-	@GetMapping(value="/board")
-	public String board() {
-		return "board";
-	}
+
 }

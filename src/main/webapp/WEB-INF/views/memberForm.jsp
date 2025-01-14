@@ -25,10 +25,10 @@
 				<tr>
 				<td align=center class="content_box">
 					<table border=0 cellpadding=10 cellspacing=0 >
-						<form action="joinOk" method="post" name="joinForm" onSubmit="return joinCheck();">
+						<form action="modifyOk" method="post" name="joinForm" onSubmit="return joinCheck();">
 						<tr>
 							<td align=right><span class="content_text">아이디 :</span></td>
-							<td><input type="text" name="mid" id="mid" class="input_box"> <input type="button" value="ID중복체크" onClick="idcheck();" class="check_btn"></td>
+							<td><input type="text" name="mid" class="input_box_readonly" value="${mdto.mid}" readonly> </td>
 						</tr>
 						<tr>
 							<td align=right><span class="content_text">패스워드 :</span></td>
@@ -40,17 +40,21 @@
 						</tr>
 						<tr>
 							<td align=right><span class="content_text">이름 :</span></td>
-							<td><input type="text" name="mname" class="input_box"></td>
+							<td><input type="text" name="mname" class="input_box" value="${mdto.mname}"></td>
 						</tr>																	
 						<tr>
 							<td align=right><span class="content_text">이메일 :</span></td>
-							<td><input type="text" name="memail" class="input_box"></td>
+							<td><input type="text" name="memail" class="input_box" value="${mdto.memail}"></td>
 						</tr>
+						<tr>
+							<td align=right><span class="content_text">가입일 :</span></td>
+							<td><input type="text" name="mdate" class="input_box_readonly" value="${mdto.mdate}" readonly></td>
+						</tr>						
 						<tr>
 							<td colspan=2 align=center>
 								<br><br>
-								<input type="submit" value="회원가입" class="content_btn" >
-								<input type="button" value="로그인" class="content_btn" onclick="javascript:location.href='login';">
+								<input type="submit" value="정보수정" class="content_btn" >
+								<input type="button" value="취소" class="content_btn" onclick="javascript:history.go(-1);">
 							</td>
 							
 						</tr>

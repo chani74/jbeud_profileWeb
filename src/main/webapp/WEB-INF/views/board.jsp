@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +28,7 @@
 			<table border=0 cellpadding=8 cellspacing=0 >
 				<tr>
 				<td align=center class="content_box">
-					<table border=0 cellpadding=10 cellspacing=0 >
+					<table border=0 cellpadding=10 cellspacing=0 width=100%>
 					
 						<tr class="board_title_tr">
 							<th align=center class='board_title_td' width="8%">번호</th>
@@ -34,86 +38,24 @@
 							<th align=center class='board_title_td' width="12%">등록일</th>
 							<th align=center class='board_title_td' width="10%">조회수</th>
 						</tr>
+						<c:forEach items="${bDtos }" var="bDto">
 						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
+							<td align=center class="board_content_td">${bDto.bnum }</td>
+							<td align=center class="board_content_td">${bDto.bid }</td>
+							<td align=center class="board_content_td">${bDto.bname }</td>
+							<td align=center class="board_content_td">
+								<a href="content" class="board_title">
+								<c:choose>
+									<c:when test="${fn:length(bDto.btitle)>25 }">${fn:substring(bDto.btitle,0,25) }...</c:when>
+									<c:otherwise>${bDto.btitle }</c:otherwise>
+								</c:choose>
+								</a>
+							</td>
+							<td align=center class="board_content_td">${fn:substring(bDto.bdate,0,10) }</td>
+							<td align=center class="board_content_td">${bDto.bhit }</td>
 						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
-						<tr class="board_content_tr">
-							<th align=center class="board_content_td">1</th>
-							<th align=center class="board_content_td">tiger</th>
-							<th align=center class="board_content_td">홍길동</th>
-							<th align=center class="board_content_td">안녕하세요.가입인사드려요.</th>
-							<th align=center class="board_content_td">2025-01-13</th>
-							<th align=center class="board_content_td">32</th>
-						</tr>
+						</c:forEach>
+						
 						<tr class="board_title_tr">
 							<th colspan=6 align=center class='board_title_td' >
 								
@@ -123,7 +65,7 @@
 						</tr>						<tr>
 							<td colspan=6 align=right>
 								
-								<input type=button value="글쓰기" class="content_btn">
+								<input type=button value="글쓰기" class="content_btn" onclick="javascript:location.href='write';">
 							</td>
 							
 						</tr>						

@@ -15,11 +15,18 @@ th.board_title_td {
 	color : #BBE1FA;
 }
 
-th.board_content_td {
+td.board_content_td {
 	font-family: NanumGothic,Arial;
 	font-size : 16px;
 	color : #0F4C75;
 }
+
+a.board_title:link{
+	text-decoration: none;
+	color:inherit;
+}
+
+
 
 tr.board_title_tr {
 	background-color: #1B262C;

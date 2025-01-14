@@ -10,12 +10,19 @@
     </insert>
     
     <select id="idCheckDao" resultType="int">
-    	select count(*) from profilemember where mid=#{parma1}
+    	select count(*) from profilemember where mid=#{param1}
     </select>
 
     <select id="memberInfoDao" resultType="com.chani74.profile.dto.MemberDto">
-    	select * from profilemember where mid=#{parma1}
+    	select * from profilemember where mid=#{param1}
     </select>
 
+	<select id="loginDao" resultType="int" >
+		select count(*) from profilemember where mid=#{param1} and mpw=#{param2}
+	</select>
+
+	<update id="ModifyDao">
+		UPDATE profilemember SET mpw=#{param2} , mname=#{param3} ,memail =#{param4} WHERE mid= #{param1}
+	</update>
     </mapper>
     

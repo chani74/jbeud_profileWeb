@@ -35,11 +35,25 @@ function joinCheck() {
 		return false;
 	}		
 	if (document.joinForm.memail.value.length==0) {
-		alert("이메일은 필수 입력사항입니다.	");
+		alert("이메일은 필수 입력사항입니다2.	");
 		document.joinForm.memail.focus();
 		return false;
 	}	
 	
 	return true;
 	
+}
+
+function idcheck() {
+		if(document.joinForm.mid.value.length == 0) {
+				alert("아이디는 필수 입력사항입니다.");
+				document.joinForm.mid.focus();
+				return false;				
+		}
+		var url = "idcheck";
+		var idvalue = document.getElementById("mid").value;
+		
+	    window.location.href = "idcheck?idcheck="+idvalue;
+		
+		
 }

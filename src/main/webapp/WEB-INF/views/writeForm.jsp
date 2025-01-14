@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/style.css">
 <link rel="stylesheet" href="../resources/css/content.css">
 <script type="text/javascript" src="../resources/js/join.js"></script>
-<title>Profile of Eunchan</title>
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -25,32 +25,30 @@
 				<tr>
 				<td align=center class="content_box">
 					<table border=0 cellpadding=10 cellspacing=0 >
-						<form action="joinOk" method="post" name="joinForm" onSubmit="return joinCheck();">
+						<form action="writeOk" method="post" name="writeForm" onSubmit="return writeCheck();">
 						<tr>
 							<td align=right><span class="content_text">아이디 :</span></td>
-							<td><input type="text" name="mid" id="mid" class="input_box"> <input type="button" value="ID중복체크" onClick="idcheck();" class="check_btn"></td>
+							<td><input type="text" name="bid" class="input_box_readonly" value="${mdto.mid}" readonly> </td>
 						</tr>
 						<tr>
-							<td align=right><span class="content_text">패스워드 :</span></td>
-							<td><input type="password" name="mpw" class="input_box"></td>
+							<td align=right><span class="content_text">작성자 :</span></td>
+							<td><input type="text" name="bname" class="input_box_readonly" value="${mdto.mname}" readonly> </td>
 						</tr>
 						<tr>
-							<td align=right><span class="content_text">패스워드 확인 :</span></td>
-							<td><input type="password" name="mpw2" class="input_box"></td>
+							<td align=right><span class="content_text">제목 :</span></td>
+							<td><input type="text" name="btitle" class="input_box" style="width:500px;"> </td>
 						</tr>
 						<tr>
-							<td align=right><span class="content_text">이름 :</span></td>
-							<td><input type="text" name="mname" class="input_box"></td>
+							<td align=right><span class="content_text">내용 :</span></td>
+							<td><textarea rows="10" cols="70" name="bcontent" class="input_box"></textarea>
+							
 						</tr>																	
-						<tr>
-							<td align=right><span class="content_text">이메일 :</span></td>
-							<td><input type="text" name="memail" class="input_box"></td>
-						</tr>
+					
 						<tr>
 							<td colspan=2 align=center>
 								<br><br>
-								<input type="submit" value="회원가입" class="content_btn" >
-								<input type="button" value="로그인" class="content_btn" onclick="javascript:location.href='login';">
+								<input type="submit" value="작성완료" class="content_btn" >
+								<input type="button" value="작성취소" class="content_btn" onclick="javascript:location.href='list';">
 							</td>
 							
 						</tr>
