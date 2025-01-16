@@ -30,7 +30,7 @@ span.content_text {
 	
 }
 
-input.input_box {
+input.input_box, textarea.input_box{
 	border:1px solid #1B262C;
 	width : 250px;
 	font-size : 20px;
@@ -38,7 +38,7 @@ input.input_box {
 	padding: 5px;
 }
 
-input.input_box_readonly {
+input.input_box_readonly , textarea.input_box_readonly{
 	border:1px solid #1B262C;
 	background-color:#eaeaea;
 	width : 250px;
@@ -46,6 +46,12 @@ input.input_box_readonly {
 	font-family: Arial;
 	padding: 5px;
 }
+
+textarea.input_box, textarea.input_box_readonly {
+	width : 500px;
+	height : 200px;
+}
+
 
 input.content_btn {
 	border:2px solid #1B262C;

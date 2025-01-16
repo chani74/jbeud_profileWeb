@@ -97,6 +97,12 @@ public class BoardController {
 		BoardDto bdto = bDao.viewContentDao(bnum);
 		
 		String sid= (String) session.getAttribute("sessionId");
+		
+		if ( sid == null ) {
+			model.addAttribute("msg", "글작성자만 수정 할 수 있습니다.");
+			return "alert/alert2";
+		}
+		
 		if(sid.equals(bdto.getBid())) {
 			model.addAttribute("bdto", bdto);
 			return "modifyContent";
