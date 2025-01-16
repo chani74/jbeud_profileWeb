@@ -21,6 +21,7 @@
 	    	UPDATE profileboard set btitle=#{param2} , bcontent=#{param3} where bnum=#{param1}
 	    </update>
 	    
+	    <!-- 글 삭제하기 -->
 	    <delete id="deleteContentDao">
 	    	DELETE FROM profileboard WHERE bnum=#{param1}
 	    </delete>

@@ -47,8 +47,15 @@
 						<tr>
 							<td colspan=2 align=center>
 								<br><br>
-								<input type="button" value="글수정" class="content_btn" onclick="javascript:location.href='modifyContent?bnum=${bdto.bnum}';">
-								<input type="button" value="글삭제" class="content_btn" onclick="javascript:location.href='deleteContent?bnum=${bdto.bnum}';">
+								<c:choose>
+									<c:when test="${sessionId != null }">
+										<input type="button" value="글수정" class="content_btn" onclick="javascript:location.href='modifyContent?bnum=${bdto.bnum}';">
+										<input type="button" value="글삭제" class="content_btn" onclick="javascript:location.href='deleteContent?bnum=${bdto.bnum}';">
+									</c:when>
+									<c:otherwise>
+									
+									</c:otherwise>
+								</c:choose>								
 								<input type="button" value="글목록" class="content_btn" onclick="javascript:location.href='list';">
 							</td>
 							

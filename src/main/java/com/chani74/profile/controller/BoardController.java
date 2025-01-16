@@ -129,10 +129,24 @@ public class BoardController {
 		BoardDto bdto = bDao.viewContentDao(bnum);
 		
 		String sid= (String) session.getAttribute("sessionId");
+		
+		if ( sid == null ) {
+			model.addAttribute("msg", "글작성자만 삭제 할 수 있습니다.");
+			return "alert/alert2";
+		}
+		
 		if(sid.equals(bdto.getBid())) {
 			
-			bDao.deleteContentDao(bnum);
-			return "redirect:list";
+			int deleteFalg = bDao.deleteContentDao(bnum);
+			
+			if (deleteFalg==1) {
+				model.addAttribute("msg", "글이 성공적으로 삭제되었습니다.");
+				model.addAttribute("url", "list");
+				return "alert/alert";
+			} else {
+				model.addAttribute("msg", "글 삭제가 실패하였습니다.");
+				return "alert/alert2";
+			}
 		} else {
 			model.addAttribute("msg", "글작성자만 삭제 할 수 있습니다.");
 			return "alert/alert2";

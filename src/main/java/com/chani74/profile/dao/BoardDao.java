@@ -9,7 +9,7 @@ public interface BoardDao {
 	public ArrayList<BoardDto> listDao () ;
 	public BoardDto viewContentDao(int bnum);
 	public void modifyContentDao(int bnum, String btitle, String bcontent);
-	public void deleteContentDao(int bnum);
+	public int deleteContentDao(int bnum);
 	public void hitContentDao(int bnum);
 	
 }
