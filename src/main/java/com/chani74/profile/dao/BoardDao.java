@@ -12,4 +12,5 @@ public interface BoardDao {
 	public int deleteContentDao(int bnum);
 	public void hitContentDao(int bnum);
 	
+	public int totalBoardCountDao();
 }

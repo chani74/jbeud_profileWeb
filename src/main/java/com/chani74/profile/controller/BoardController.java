@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chani74.profile.dao.BoardDao;
 import com.chani74.profile.dao.MemberDao;
 import com.chani74.profile.dto.BoardDto;
+import com.chani74.profile.dto.Criteria;
 import com.chani74.profile.dto.MemberDto;
+import com.chani74.profile.dto.PageDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -64,9 +66,18 @@ public class BoardController {
 
 	
 	@GetMapping("/list")
-	public String list(HttpServletRequest request, Model model) {
+	public String list(HttpServletRequest request, Model model , Criteria criteria) {
 		
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		
+		String pageNum = request.getParameter("page");
+		criteria.setPageNum( Integer.parseInt(pageNum));
+		
+		int total = bDao.totalBoardCountDao();
+		
+		PageDto pageDto = new PageDto(total, criteria);
+		
+		
 		ArrayList<BoardDto> bDtos = bDao.listDao();
 		
 		model.addAttribute("bDtos", bDtos);

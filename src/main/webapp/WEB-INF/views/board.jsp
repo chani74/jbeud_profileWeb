@@ -59,7 +59,7 @@
 						<tr class="board_title_tr">
 							<th colspan=6 align=center class='board_title_td' >
 								
-								<< < 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10 > >>
+								<< < 1 / 2 / <a href="list?page=3">3</a> / 4 / 5 / 6 / 7 / 8 / 9 / 10 > >>
 							</th>
 							
 						</tr>						<tr>

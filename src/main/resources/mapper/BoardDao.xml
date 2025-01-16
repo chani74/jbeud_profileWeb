@@ -30,5 +30,8 @@
 	    	UPDATE profileboard set bhit = bhit + 1 WHERE bnum=#{param1}
 	    </update>
 	    
+	    <select id="totalBoardCountDao">
+	    	select count(*) from profileboard
+	    </select>
     </mapper>
     
