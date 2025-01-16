@@ -20,5 +20,14 @@
 	    <update id="modifyContentDao">
 	    	UPDATE profileboard set btitle=#{param2} , bcontent=#{param3} where bnum=#{param1}
 	    </update>
+	    
+	    <delete id="deleteContentDao">
+	    	DELETE FROM profileboard WHERE bnum=#{param1}
+	    </delete>
+	    
+	    <update id="hitContentDao">
+	    	UPDATE profileboard set bhit = bhit + 1 WHERE bnum=#{param1}
+	    </update>
+	    
     </mapper>
     

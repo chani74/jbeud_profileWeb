@@ -80,6 +80,8 @@ public class BoardController {
 		int bnum = Integer.parseInt(request.getParameter("bnum"));
 		
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+
+		bDao.hitContentDao(bnum);
 		BoardDto bdto = bDao.viewContentDao(bnum);
 		
 		model.addAttribute("bdto", bdto);
@@ -118,5 +120,25 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
+	@GetMapping("/deleteContent")
+	public String deleteContent(HttpServletRequest request, Model model, HttpSession session) {
 		
+		int bnum = Integer.parseInt(request.getParameter("bnum"));
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bdto = bDao.viewContentDao(bnum);
+		
+		String sid= (String) session.getAttribute("sessionId");
+		if(sid.equals(bdto.getBid())) {
+			
+			bDao.deleteContentDao(bnum);
+			return "redirect:list";
+		} else {
+			model.addAttribute("msg", "글작성자만 삭제 할 수 있습니다.");
+			return "alert/alert2";
+		}
+
+		
+	}	
+	
 }
