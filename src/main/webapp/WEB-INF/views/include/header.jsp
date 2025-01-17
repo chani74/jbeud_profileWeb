@@ -27,7 +27,7 @@
 		<td width=5% >
 		<c:choose>
 			<c:when test="${sessionId != null }">
-				<a href="logout" class="header_link"><span class="header_menu">LOGOUT</span></a>
+				<a href="logout_confirm" class="header_link"><span class="header_menu">LOGOUT</span></a>
 			</c:when>	
 			<c:otherwise>
 				<a href="login" class="header_link"><span class="header_menu">LOGIN</span></a>

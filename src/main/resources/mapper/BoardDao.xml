@@ -10,7 +10,14 @@
 	    </insert>
 	    
 	    <select id="listDao" resultType="com.chani74.profile.dto.BoardDto">
-	    	SELECT * FROM profileboard ORDER BY bnum DESC 
+	    	SELECT * FROM (
+				    SELECT 
+				        BNUM, BID, BTITLE, BCONTENT, BHIT, BDATE, BNAME,
+				        ROW_NUMBER() OVER (ORDER BY BNUM DESC) AS ROWNUMBER
+				    FROM PROFILEBOARD
+				) 
+				WHERE ROWNUMBER BETWEEN ((#{param2} - 1) * #{param1} + 1) AND (#{param2} * #{param1})
+				<!-- WHERE ROWNUMBER BETWEEN ((page - 1) * 10 + 1) AND (page * 10)  -->
 	    </select>
 	    
 	    <select id="viewContentDao" resultType="com.chani74.profile.dto.BoardDto">

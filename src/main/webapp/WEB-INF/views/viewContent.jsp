@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/style.css">
 <link rel="stylesheet" href="../resources/css/content.css">
-<script type="text/javascript" src="../resources/js/join.js"></script>
+<script type="text/javascript" src="board.js"></script>
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -56,7 +56,7 @@
 									
 									</c:otherwise>
 								</c:choose>								
-								<input type="button" value="글목록" class="content_btn" onclick="javascript:location.href='list';">
+								<input type="button" value="글목록" class="content_btn" onclick="javascript:location.href='list?page=${pageNum}';">
 							</td>
 							
 						</tr>

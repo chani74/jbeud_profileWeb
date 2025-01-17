@@ -97,8 +97,20 @@ public class MemberController {
 		return "index";
 	}
 	
+
+	@GetMapping("logout_confirm")
+	public String logout_confirm(HttpServletRequest request, Model model, HttpSession session) {
+		
+		model.addAttribute("msg", "로그아웃하시겠습니까?");
+		model.addAttribute("url", "logout");
+		
+		return "alert/confirm";
+		
+	}
+	
 	@GetMapping("logout")
-	public String getMethodName(HttpServletRequest request, Model model, HttpSession session) {
+	public String logout(HttpServletRequest request, Model model, HttpSession session) {
+		
 		session.invalidate();
 		model.addAttribute("msg", "로그아웃되었습니다.");
 		model.addAttribute("url", "index");

@@ -9,6 +9,12 @@ https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa
 #BBE1FA
 */
 
+tr.board_content_tr {
+
+}
+
+
+
 th.board_title_td {
 	font-family: NanumGothic,Arial;
 	font-size : 16px;
@@ -19,6 +25,7 @@ td.board_content_td {
 	font-family: NanumGothic,Arial;
 	font-size : 16px;
 	color : #0F4C75;
+	padding:8px
 }
 
 a.board_link:link{
@@ -43,3 +50,36 @@ tr.board_content_tr {
 	background-color: #BBE1FA;
 }
 
+.page_link_wrap {
+   text-align:center;
+}
+
+ul.page_link {
+	display: inline-block;
+	margin:0px ;
+	padding:0px; 
+	text-align:center;
+	list-style: none;
+}
+
+ul.page_link li {
+    display: inline;
+    	margin:0px ;
+	padding:0px; 
+}
+ul.page_link a {
+    background: #BBE1FA;
+    color: #1B262C;
+    border: 1px solid #1B262C;
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin: 0 5px;
+	padding-top: 5px; 
+	text-decoration: none;
+	
+}
+ul.page_link a.active {
+    background: #3282B8;
+
+}

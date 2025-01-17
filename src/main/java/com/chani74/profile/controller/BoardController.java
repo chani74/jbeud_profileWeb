@@ -71,24 +71,28 @@ public class BoardController {
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
 		
 		String pageNum = request.getParameter("page");
-		criteria.setPageNum( Integer.parseInt(pageNum));
+		if (pageNum != null ) {
+			criteria.setPageNum( Integer.parseInt(pageNum));
+		}
 		
 		int total = bDao.totalBoardCountDao();
 		
 		PageDto pageDto = new PageDto(total, criteria);
 		
 		
-		ArrayList<BoardDto> bDtos = bDao.listDao();
+		ArrayList<BoardDto> bDtos = bDao.listDao(criteria.getAmount(), criteria.getPageNum());
 		
 		model.addAttribute("bDtos", bDtos);
+		model.addAttribute("pageDto", pageDto);
 		
 		return "board";
 	}
 	
 	@GetMapping("/viewContent")
-	public String viewContent(HttpServletRequest request, Model model) {
+	public String viewContent(HttpServletRequest request, Model model, Criteria criteria) {
 		
 		int bnum = Integer.parseInt(request.getParameter("bnum"));
+		String pageNum = request.getParameter("page");
 		
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
 
@@ -96,6 +100,7 @@ public class BoardController {
 		BoardDto bdto = bDao.viewContentDao(bnum);
 		
 		model.addAttribute("bdto", bdto);
+		model.addAttribute("pageNum",pageNum);
 		
 		return "viewContent";
 	}
@@ -137,8 +142,21 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
+	
 	@GetMapping("/deleteContent")
 	public String deleteContent(HttpServletRequest request, Model model, HttpSession session) {
+	
+		String bnum = request.getParameter("bnum");
+
+		model.addAttribute("msg", "글 삭제 하시겠습니까?");
+		model.addAttribute("url", "deleteContentOk?bnum="+bnum );
+		
+		return "alert/confirm";
+		
+	}
+			
+	@GetMapping("/deleteContentOk")
+	public String deleteContentOk(HttpServletRequest request, Model model, HttpSession session) {
 		
 		int bnum = Integer.parseInt(request.getParameter("bnum"));
 		
